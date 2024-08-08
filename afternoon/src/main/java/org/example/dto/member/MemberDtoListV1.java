@@ -1,11 +1,11 @@
-package org.example.controller.dto.member;
+package org.example.dto.member;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MemberDtoListV1 {
     private static MemberDtoListV1 instance;
-    private List<MemberDto> memberDtoList;
+    private List<org.example.dto.member.MemberDto> memberDtoList;
 
     private MemberDtoListV1() {
         this.memberDtoList = new ArrayList<>();
@@ -22,7 +22,7 @@ public class MemberDtoListV1 {
     }
 
     public void addList(String id, String name) {
-        memberDtoList.add(new MemberDto(id, name));
+        memberDtoList.add(new org.example.dto.member.MemberDto(id, name));
     }
 
     public List<MemberDto> getList() {

@@ -1,4 +1,4 @@
-package org.example.controller.dto.todo;
+package org.example.controller.todo;
 
 import java.util.ArrayList;
 import java.util.List;

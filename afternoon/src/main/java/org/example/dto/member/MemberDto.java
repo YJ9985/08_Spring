@@ -1,4 +1,4 @@
-package org.example.controller.dto.member;
+package org.example.dto.member;
 
 public class MemberDto {
     private String id;

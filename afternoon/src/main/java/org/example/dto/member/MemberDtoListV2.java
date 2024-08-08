@@ -1,7 +1,5 @@
-package org.example.dto;
+package org.example.dto.member;
 
-import org.example.controller.dto.member.MemberDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

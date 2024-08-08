@@ -1,4 +1,4 @@
-package org.example.controller.dto.todo;
+package org.example.controller.todo;
 
 public class TodoDto {
     private String todo;
