@@ -5,7 +5,7 @@
     <title>회원 목록</title>
 </head>
 <body>
-<%@ include file="header.jsp"%>
+<%@ include file="../header.jsp"%>
 <h1>회원 목록</h1>
 <ul>
     <c:forEach var="member" items="${memberList}">
