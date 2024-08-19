@@ -23,6 +23,11 @@ public class PostController {
     private final PostRepository postRepository;
     private String context = "/post";
 
+//    public PostController(PostRepository postRepository) {
+//        this.postRepository = postRepository;
+//    }
+
+
     // 게시글 목록 보기
     @GetMapping("/show")
     public String postList(HttpServletRequest request, Model model) {

@@ -27,5 +27,6 @@ public class ServletConfig implements WebMvcConfigurer {
         bean.setPrefix("/WEB-INF/views/");
         bean.setSuffix(".jsp");
         registry.viewResolver(bean);
+
     }
 }
