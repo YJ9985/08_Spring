@@ -3,12 +3,11 @@ package org.example.controller.book;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.domain.BookMyBatis;
-import org.example.repository.book.mybatis.BookRepository;
+import org.example.repository.book.mybatis.BookRepository2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.print.Book;
 import java.util.List;
 
 @RestController
@@ -17,17 +16,17 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 @RequestMapping(value = "/book/mybatis")
 public class MyBatisBookController {
-    private final BookRepository bookRepository;
+    private final BookRepository2 bookRepository2;
 
     @GetMapping("/show")
     public ResponseEntity<List<BookMyBatis>> findAll() {
-        List<BookMyBatis> bookMyBatis = bookRepository.findAll();
+        List<BookMyBatis> bookMyBatis = bookRepository2.findAll();
         return ResponseEntity.ok(bookMyBatis);
     }
 
     @GetMapping("/show/{id}")
     public ResponseEntity<BookMyBatis> findById(@PathVariable Long id) {
-        BookMyBatis findBook = bookRepository.findById(id);
+        BookMyBatis findBook = bookRepository2.findById(id);
 
         if(findBook == null) return ResponseEntity.notFound().build();
 
@@ -41,7 +40,7 @@ public class MyBatisBookController {
             @RequestParam("author") String author
     ) {
         BookMyBatis newBook = new BookMyBatis(null, title, author);
-        int affectedRows = bookRepository.save(newBook);
+        int affectedRows = bookRepository2.save(newBook);
         if (affectedRows == 0) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         } else {
@@ -51,7 +50,7 @@ public class MyBatisBookController {
 
     @DeleteMapping(value = "/delete/{id}", produces = "text/plain;charset=UTF-8")
     public ResponseEntity<String> deleteBook(@PathVariable Long id) {
-        int result = bookRepository.delete(id);
+        int result = bookRepository2.delete(id);
         if (result > 0) {
             return ResponseEntity.ok("게시글 삭제 성공");
         } else {

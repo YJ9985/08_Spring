@@ -9,6 +9,8 @@ import javax.transaction.Transactional;
 import java.awt.print.Book;
 import java.util.List;
 
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
 @Slf4j
 @RequiredArgsConstructor
 @Transactional
@@ -28,7 +30,7 @@ public class JpaBookRepository {
     }
 
     public void delete(Book book) {
-        Book book = em.find(Book.class, id);
-        if (book != null) em.remove(book);
+        Book book1 = em.find(Book.class, id);
+        if (book1 != null) em.remove(book1);
     }
 }

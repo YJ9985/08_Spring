@@ -11,7 +11,7 @@ import javax.transaction.Transactional;
 @Slf4j
 @RequiredArgsConstructor
 @Transactional
-@RequestMapping*("/book/jpa")
+@RequestMapping("/book/jpa")
 public class JpaBookController {
 
 }
